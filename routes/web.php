@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
+use App\Http\Controllers\ListFundos;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +22,5 @@ Route::get('/', function () {
 
 
 Route::get("/listfundos" , function() {
-    return view('list_fundos');
+    return ListFundos::ListFundosJcot();
 });
