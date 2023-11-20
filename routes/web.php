@@ -16,11 +16,22 @@ use App\Http\Controllers\ListFundos;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+
+
+// Route::get("/listfundos" , function() {
+//     return ListFundos::ListFundosJcot();
+// });
+
 
 
 
 Route::get("/listfundos" , function() {
-    return ListFundos::ListFundosJcot();
-});
+    $fundos = ListFundos::ListFundosJcot();
+    return view('list_fundos' ,  compact('fundos'));
+})->name('fundos_jcot');
+
+
+
